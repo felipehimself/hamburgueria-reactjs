@@ -37,13 +37,13 @@ Vite
 - Clone o repositório com o comando **git clone**:
 
 ```
-git clone https://github.com/felipehimself/hamburgueria.git
+git clone https://github.com/felipehimself/hamburgueria-reactjs.git
 ```
 
 - Entre no diretório que acabou de ser criado:
 
 ```
-cd hamburgueria
+cd hamburgueria-reactjs
 ```
 
 - Para o projeto funcionar na sua máquina, será necessário instalar suas dependências, para isso, utilize o comando:
