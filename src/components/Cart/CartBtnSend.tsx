@@ -21,7 +21,7 @@ const CartBtnSend = () => {
   return (
     <Wrapper>
       <button onClick={handleSendMessage} className='btn-send'>
-        Enviar
+        ENVIAR
         <FaTelegramPlane />
       </button>
     </Wrapper>
@@ -40,6 +40,7 @@ const Wrapper = styled.div`
     font-size: 1.8rem;
     width: 100%;
     padding: 1rem 1rem;
+    height: 5.2rem;
     margin: 1rem 0;
     background-color: ${Styles.Colors.colorOrange};
     border: none;

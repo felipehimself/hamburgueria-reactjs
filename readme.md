@@ -83,7 +83,6 @@ O projeto está organizado e estruturado da seguinte forma:
     │   │       CartBtnSend.tsx
     │   │       CartSummary.tsx
     │   │
-    │   ├───Footer
     │   ├───Header
     │   │       Header.tsx
     │   │
