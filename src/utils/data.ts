@@ -190,3 +190,29 @@ const data: IAppData[] = [
 ];
 
 export default data;
+
+
+export const isPlaceOpen = () => {
+  const date = new Date();
+  const dayOfTheWeek = date.getDay();
+  const hour = date.getHours();
+
+  if (
+    (dayOfTheWeek === 0 || dayOfTheWeek === 6) &&
+    hour >= 18 &&
+    hour <= 24
+  ) {
+    return true;
+  } else if (dayOfTheWeek === 1 && hour >= 17 && hour <= 22) {
+    return true;
+  } else if (
+    dayOfTheWeek >= 2 &&
+    dayOfTheWeek <= 5 &&
+    hour >= 18 &&
+    hour <= 23
+  ) {
+    return true;
+  }
+
+  return false;
+};

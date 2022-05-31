@@ -6,17 +6,11 @@ import { IoTrash } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { removeOrder } from '../../services/slices/ordersSlice';
-import CartBtnSend from './CartBtnSend';
+import CartBtnSend from './CartBtnSend/CartBtnSend';
 
 const CartSummary = () => {
   const { data } = useSelector((state: RootState) => state.ordersData);
   const dispatch = useDispatch();
-
-  // melhorar semântica em itens
-  // melhorar estrutura CSS de components
-  // melhorar nome de classes CSS
-  // novos screen shots
-  // incluir no read me que tem bot!!!
 
   return (
     <>

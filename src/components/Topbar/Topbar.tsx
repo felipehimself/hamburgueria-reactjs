@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 import { Styles } from '../../constants/styles';
-import SearchInput from './SearchInput';
+import SearchInput from './Input/SearchInput';
 import { FaSearch, FaArrowLeft } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
+
+import * as Style from './styles';
 
 const Topbar = () => {
   const [showInput, setShowInput] = useState<boolean>(false);
@@ -16,11 +17,11 @@ const Topbar = () => {
   };
 
   return (
-    <Top>
+    <Style.TopBar>
       {pathname === '/' && (
         <SearchInput showInput={showInput} toggleInput={toggleInput} />
       )}
-      <div className='icons-container'>
+      <Style.Container>
         {pathname.includes('cart') ? (
           <FaArrowLeft
             color={Styles.Colors.colorWhite}
@@ -36,32 +37,9 @@ const Topbar = () => {
             size={18}
           />
         )}
-      </div>
-    </Top>
+      </Style.Container>
+    </Style.TopBar>
   );
 };
 
-const Top = styled.div`
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: ${Styles.Colors.colorPrimary};
-  height: 5rem;
-  padding: 0 0 0 2rem;
-  display: flex;
-  gap: 2rem;
-  justify-content: flex-end;
-  align-items: center;
-  z-index: 100;
-
-  .icons-container {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    /* margin-right: 2rem; */
-    padding: 0 1rem;
-  }
-`;
 export default Topbar;

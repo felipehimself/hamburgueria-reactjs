@@ -10,12 +10,11 @@ import {
 import 'react-accessible-accordion/dist/fancy-example.css';
 
 import AccordionCard from './AccordionCard';
-import styled from 'styled-components';
-import { Container } from '../../shared/Container';
 import OrderOptions from '../Modal/Order/OrderOptions';
 
 import Modal from '../Modal/Modal';
-import { Styles } from '../../constants/styles';
+
+import * as Style from './styles';
 
 const AccordionContainer = () => {
   const { data } = useSelector((state: RootState) => state.data);
@@ -27,7 +26,7 @@ const AccordionContainer = () => {
       <Modal show={orderData.isModalOpen}>
         <OrderOptions {...orderData} />
       </Modal>
-      <Wrapper>
+      <Style.AccordionContainer>
         <Accordion
           allowMultipleExpanded={true}
           preExpanded={data.map((i) => i.id)}
@@ -54,46 +53,22 @@ const AccordionContainer = () => {
                     </AccordionItemButton>
                   </AccordionItemHeading>
                   <AccordionItemPanel>
-                    <div className='item-container'>
+                    <Style.AccordionItemContainer >
                       {opcoes.map((opcao) => (
                         <AccordionCard key={opcao.nome} {...opcao} />
                       ))}
-                    </div>
+                    </Style.AccordionItemContainer>
                   </AccordionItemPanel>
                 </AccordionItem>
               );
             })}
         </Accordion>
         {data.filter((item) => item.categoria.includes(term)).length < 1 && (
-          <p className='no-data-msg'>Nenhum item encontrado!
-          </p>
+          <Style.H2 >Nenhum item encontrado!</Style.H2>
         )}
-      </Wrapper>
+      </Style.AccordionContainer>
     </>
   );
 };
 
-const Wrapper = styled(Container)`
-  padding: 2rem 1rem;
-  margin-bottom: 20rem;
-
-  .item-container {
-    display: grid;
-    gap: 4rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (max-width: 1000px) {
-    .item-container {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .no-data-msg {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    color: ${Styles.Colors.colorGrayDark};
-  }
-`;
 export default AccordionContainer;
