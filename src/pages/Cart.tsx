@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { Container } from '../shared/Container';
 import CartSummary from '../components/Cart/CartSummary';
 
@@ -10,7 +9,4 @@ const Cart = () => {
   );
 };
 
-const Wrapper = styled.section`
-  margin: 10rem auto;
-`;
 export default Cart;

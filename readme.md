@@ -23,7 +23,6 @@
 - [**React Router Dom**](https://v5.reactrouter.com/web/guides/quick-start)
 - [**Axios**](https://github.com/axios/axios)
 
-
 ## Instruções para rodar o projeto <a name="instrucoes"></a>
 
 ### Será necessário ter instalado na sua máquina:
@@ -63,7 +62,7 @@ npm run dev
 O projeto está organizado e estruturado da seguinte forma:
 
 ```
-    └───src
+───src
     │   App.tsx
     │   favicon.svg
     │   main.tsx
@@ -77,38 +76,52 @@ O projeto está organizado e estruturado da seguinte forma:
     │   ├───Accordion
     │   │       AccordionCard.tsx
     │   │       AccordionContainer.tsx
+    │   │       styles.ts
     │   │
     │   ├───Cart
-    │   │       CartBtnAdd.tsx
-    │   │       CartBtnSend.tsx
-    │   │       CartSummary.tsx
+    │   │   │   CartSummary.tsx
+    │   │   │   styles.ts
+    │   │   │
+    │   │   ├───CartBtnAdd
+    │   │   │       CartBtnAdd.tsx
+    │   │   │       styles.ts
+    │   │   │
+    │   │   └───CartBtnSend
+    │   │           CartBtnSend.tsx
+    │   │           styles.ts
     │   │
     │   ├───Header
     │   │       Header.tsx
+    │   │       styles.ts
     │   │
     │   ├───Menu
     │   │       Menu.tsx
+    │   │       styles.ts
     │   │
     │   ├───Modal
     │   │   │   Content.tsx
     │   │   │   Modal.tsx
-    │   │   │   Title.tsx
+    │   │   │   style.ts
     │   │   │
     │   │   ├───Order
     │   │   │       OrderOptions.tsx
+    │   │   │       styles.ts
     │   │   │
     │   │   └───Working
+    │   │           styles.ts
     │   │           WorkingHours.tsx
     │   │
     │   └───Topbar
-    │           Hamburguer.tsx
-    │           SearchInput.tsx
-    │           Topbar.tsx
+    │       │   styles.ts
+    │       │   Topbar.tsx
+    │       │
+    │       └───Input
+    │               SearchInput.tsx
+    │               styles.ts
     │
     ├───constants
     │       styles.ts
-    │
-    │
+    │    
     ├───interfaces
     │       dataInterfaces.ts
     │
@@ -141,30 +154,33 @@ O projeto está organizado e estruturado da seguinte forma:
 
 ### Estilização
 
-Para realizar a estilização, foi utilizado: 
-- [**Styled Components**](https://styled-components.com/).
+Para realizar a estilização, foi utilizado:
 
+- [**Styled Components**](https://styled-components.com/).
 
 ### Esquema de rotas
 
-Para a implementação de rotas foi utilizado: 
+Para a implementação de rotas foi utilizado:
+
 - [**React Router Dom**](https://v5.reactrouter.com/web/guides/quick-start)
 
 ### Gerenciamento de Estados
 
 Para o gerenciamento de estados foram utilizados:
+
 - [**Redux Toolkit**](https://redux-toolkit.js.org/)
 - [**React Redux**](https://react-redux.js.org/)
 
 ### Requisições HTTP
 
 Para realizar a requisição HTTP responsável por enviar os dados do pedido do cliente via bot do Telegram, foi utilizado:
-- [**Axios**](https://github.com/axios/axios)
 
+- [**Axios**](https://github.com/axios/axios)
 
 ## Imagens <a name="imagens" ></a>
 
 ### Desktop
+
 <img src='./src/images/img-1.PNG' alt='home' width="500" /> 
 <img src='./src/images/img-2.PNG' alt='home' width="500" /> 
 <img src='./src/images/img-3.PNG' alt='home' width="500" /> 
@@ -175,11 +191,10 @@ Para realizar a requisição HTTP responsável por enviar os dados do pedido do 
 <img src='./src/images/img-8.PNG' alt='cart' width="500" />
 
 ### Mobile
+
 <img src='./src/images/img-9.PNG' alt='home' width="500" /> 
 <img src='./src/images/img-10.PNG' alt='home' width="500" /> 
 <img src='./src/images/img-11.PNG' alt='home' width="500" /> 
 <img src='./src/images/img-12.PNG' alt='home' width="500" /> 
 <img src='./src/images/img-13.PNG' alt='home' width="500" /> 
-<img src='./src/images/img-14.PNG' alt='cart' width="500" /> 
-
-
+<img src='./src/images/img-14.PNG' alt='cart' width="500" />
