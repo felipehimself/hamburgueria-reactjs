@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { IOrder } from '../../interfaces/dataInterfaces';
 
-const initialState: IOrder[] = [];
+const storagedData = JSON.parse(localStorage.getItem('orders-data')!);
+
+const initialState: IOrder[] = storagedData ?? [];
 
 const ordersSlice = createSlice({
   name: 'ordersSlice',
@@ -9,11 +11,15 @@ const ordersSlice = createSlice({
   reducers: {
     setOrderData: (state, action) => {
       state.data.push(action.payload);
+      localStorage.setItem('orders-data', JSON.stringify(state.data));
+
     },
 
     removeOrder: (state, action) => {
       const filteredState = state.data.filter((item)=> item.id !== action.payload)
       state.data = filteredState;
+      localStorage.setItem('orders-data', JSON.stringify(state.data));
+
     },
     
   },

@@ -3,7 +3,10 @@ import data from '../../utils/data';
 
 import { IAppData } from '../../interfaces/dataInterfaces';
 
-const initialState: IAppData[] = data;
+const storagedData = JSON.parse(localStorage.getItem('hamb-data')!);
+
+
+const initialState: IAppData[] = storagedData ?? data;
 
 const dataSlice = createSlice({
   name: 'dataSlice',
